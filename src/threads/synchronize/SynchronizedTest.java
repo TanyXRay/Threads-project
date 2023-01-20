@@ -79,7 +79,7 @@ class Worker {
         }
 
         long after = System.currentTimeMillis();
-        System.out.println("Programm took " + (after - before) + " ms to run");
+        System.out.println("Program took " + (after - before) + " ms to run");
         System.out.println("list1 " + list1.size());
         System.out.println("list2 " + list2.size());
     }
