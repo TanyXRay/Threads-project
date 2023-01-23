@@ -30,7 +30,6 @@ class ReadFileAsThread extends Thread {
     }
 
     public void run() {
-        synchronized (this) {
             System.out.println("Begin thread: " + thread.getName());
             try (FileInputStream input = new FileInputStream(filename);
                  Scanner scanner = new Scanner(input)) {
@@ -44,7 +43,6 @@ class ReadFileAsThread extends Thread {
                 System.out.println("Error: " + e.getMessage());
             }
             System.out.println("End thread: " + thread.getName());
-        }
     }
 }
 

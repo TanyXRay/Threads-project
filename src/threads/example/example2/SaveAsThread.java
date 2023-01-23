@@ -26,15 +26,9 @@ class SaveAsThread implements Runnable {
 
     public void start() {
         thread.start();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public void run() {
-        synchronized (this) {
             System.out.println("Begin thread: " + threadName);
             try (FileOutputStream out = new FileOutputStream(filename);
                  PrintStream printStream = new PrintStream(out)) {
@@ -47,7 +41,6 @@ class SaveAsThread implements Runnable {
                 System.out.println("Error: " + e.getMessage());
             }
             System.out.println("End thread: " + threadName);
-        }
     }
 }
 
